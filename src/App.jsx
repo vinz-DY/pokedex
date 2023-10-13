@@ -33,21 +33,14 @@ const pokemonList = [
 
 function Card() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-  const toto = () => {
-    setPokemonIndex(pokemonIndex - 1)
-  }
-  const tutu = () => {
-    setPokemonIndex(pokemonIndex + 1)
-  };
-
+  
 
   return (
     <div>
       <NavBar
         pokemonIndex = {pokemonIndex}
         pokemonList={pokemonList}
-        tutu={tutu}
-        toto={toto}
+        setPokemonIndex={setPokemonIndex}
        
       />
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />

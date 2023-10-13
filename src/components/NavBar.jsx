@@ -1,11 +1,18 @@
 
-const NavBar = ({pokemonIndex, pokemonList, tutu, toto}) => {
+function NavBar ({ pokemonIndex, pokemonList, setPokemonIndex }) {
+ const handleClick = ((pokemonIndex) => {
+    setPokemonIndex(pokemonIndex);
+  });
+
     return (
         <div>
-      {(pokemonIndex > 0) ? (<button onClick={toto}>précédent</button>) : ("")}
-      {(pokemonIndex < pokemonList.length - 1) ? (<button onClick={tutu}>suivant</button>) : ("")}
+            {pokemonList.map((pokemon, pokemonIndex) => (
+                <button key={pokemon.name}
+                onClick={ () => handleClick(pokemonIndex)}
+                >{pokemon.name}</button>
+            ))}
         </div>
-    );
+)
 }
 
 export default NavBar;
